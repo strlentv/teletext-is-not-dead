@@ -462,7 +462,7 @@ void Teletext_Init( void )
   gau8TeletextLineBuffer[ 0u ][ 10u ] = Hamming84( 0u );  // S4, 0-3
   // Control bits
   gau8TeletextLineBuffer[ 0u ][ 11u ] = Hamming84( 2u );  // data changed indicator
-  gau8TeletextLineBuffer[ 0u ][ 12u ] = Hamming84( 0u );  // default codepage
+  gau8TeletextLineBuffer[ 0u ][ 12u ] = Hamming84( 4u );  // swedish codepage
   
   // Init visible area
   Teletext_TextMode();
