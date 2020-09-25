@@ -1,6 +1,6 @@
 # Teletext is not dead
-This is the source code of our demo for Function 2019, where it ended up on 3rd place in wild category.
-[Pouet page](http://www.pouet.net/prod.php?which=82943)
+This is the source code of our demo for Function 2019, where it ended up on 3rd place in wild category. 
+[You can find it on Pouet too.](http://www.pouet.net/prod.php?which=82943)
 
 ## What does it run on?
 It runs on a custom hardware based on STM32F030F4, one of the cheapest microcontrollers, with an ARM Cortex-M0 CPU, 16k flash and 4k of RAM. To see the pictures and animation, connect its composite video output to a television AV-input and open teletext page 100.
@@ -8,7 +8,7 @@ It runs on a custom hardware based on STM32F030F4, one of the cheapest microcont
 ![The hardware](pic/hardware.jpg)
 
 ## Theory of operation
-Microcontrollers does not have any composite video output, let alone teletext output. Therefore some software magic was necessary: TIM3 runs in PWM mode and generates the video syncronization signal. Its duty cycle is updated in IT routine, so proper interlaced PAL syncronization is achieved. The teletext signal is then superimposed on the video signal via SPI1. SPI1 is fed by a DMA channel, however to achive proper timings, the DMA channel is configured by an another DMA channel which is triggered by TIM3.
+Microcontrollers does not have any composite video output, let alone teletext output. Therefore some software magic was necessary: TIM3 runs in PWM mode and generates the video syncronization signal. Its duty cycle is updated in IT routine, so proper interlaced PAL syncronization is achieved. The teletext signal is then superimposed on the video signal by SPI1. SPI1 is fed by a DMA channel, however to achive proper timings, the DMA channel is configured by an another DMA channel which is triggered by TIM3.
 
 ## How do I build the hardware?
 The gerber files are located at [hardware/fab](hardware/fab/DemoPlatform_Rev_A.rar). In the same directory you can find the [schematics](hardware/fab/DemoPlatform_Rev_A.pdf) too.
@@ -27,7 +27,7 @@ Shout out to Gergely Vakulya, who made it compile with GCC. GCC project can be f
 ## Possible upgrades
 - Sound is not yet implemented, but it is possible to use PWM output as a poor-man's audio DAC.
 - With proper resistor values, it is possible to generate low-resolution 16-level grayscale images on the video output.
-- There is an unpopulated place for an I2C EEPROM on the board.
+- The I2C EEPROM can be used to store demo-related data up to 128kbytes.
 - It is possible to add a daughterboard to P1.
 
 ## Any remarks?
