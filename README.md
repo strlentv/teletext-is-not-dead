@@ -32,3 +32,9 @@ Shout out to Gergely Vakulya, who made it compile with GCC. GCC project can be f
 
 ## Any remarks?
 Feel free to reuse the hardware and the drivers to make teletext demos :)
+
+## Credits
+- Hardware and code by Hekk_Elek
+- Teletext pages and music by And/or
+- 3D graphics by Alex
+- Voice by Brett
